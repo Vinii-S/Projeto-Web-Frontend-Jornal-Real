@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornal Real</title>
-        <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="container">
-        <div class="top-bar">
-            <header class="top-bar"> 
-                 <span class="material-icons">person</span>
-            <h2 id="page-title">API TESTES</h2>
+        <header class="top-bar"> 
+                <div class="topo-bar-content">
+                    <div>
+                        <span class="material-icons">person</span>
+                    </div>
+                    <div class="header-title">
+                        <h1 id="page-title">JORNAL REAL</h1>
+                    </div>
+                    <div class="header-info">
+                        <span id="datahora">10:00 05/09/25</span>
+                        <div class="header-search">
+                            <input type="text" placeholder="Buscar ">
+                        </div>
+                    </div>
+                </div> 
             </header>
-        </div> 
-        <div class="menu-lateral">
-            <nav class="menu">
+        <aside class="menu-lateral">
+            <div class="menu-header">
+                <span>MENU</span>
+            </div>
+            <nav class="menu-itens">
                 <ul>
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Educação</a></li>
@@ -27,8 +41,30 @@
                     <li><a href="#">Tecnologia</a></li>
                 </ul>
             </nav>
-        </div>
-        
+        </aside>
+    <main class="main-conteudo">
+        <article class="noticia-destaque">
+            <div class="foto-placehollder">Foto</div>
+            <p>Breve Descrição da notícia</p>
+        </article>
+        <article class="noticia-destaque">
+            <div class="foto-placehollder">Foto</div>
+            <p>Breve Descrição da notícia</p>
+        </article>
+        <article class="noticia-destaque">
+            <div class="foto-placehollder">Foto</div>
+            <p>Breve Descrição da notícia</p>
+        </article>
+        <article class="noticia-destaque">
+            <div class="foto-placehollder">Foto</div>
+            <p>Breve Descrição da notícia</p>
+        </article>
+    </main>   
+    <footer class="rodape">
+        <p>J.R. © Copyright 2025</p>
+        <a href="#">Reclamação</a>
     </div>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
