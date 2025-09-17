@@ -12,54 +12,39 @@
     <div class="container">
         <header class="top-bar"> 
                 <div class="topo-bar-content">
-                    <div>
-                        <span class="material-icons">person</span>
+                    <div class="header-usuario">
+                        <a href="#"><span class="material-icons">person</span></a>
                     </div>
                     <div class="header-title">
-                        <h1 id="page-title">JORNAL REAL</h1>
+                        <a href="/"><h1 id="page-title">JORNAL REAL</h1></a>
                     </div>
                     <div class="header-info">
                         <span id="datahora">10:00 05/09/25</span>
-                        <div class="header-search">
-                            <input type="text" placeholder="Buscar ">
-                        </div>
                     </div>
                 </div> 
+                
             </header>
         <aside class="menu-lateral">
             <div class="menu-header">
-                <span>MENU</span>
+                <button class="menu-botao" id="menu-toggle">
+                    <span class="material-icons">menu</span>
+                    <span class="menu-text">MENU</span>
+                </button>
             </div>
             <nav class="menu-itens">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Educação</a></li>
-                    <li><a href="#">Política</a></li>
-                    <li><a href="#">Esportes</a></li>
-                    <li><a href="#">Saúde</a></li>
-                    <li><a href="#">Governo</a></li>
-                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="/componentes/home.html"><b>Início</b></a></li>
+                    <li><a href="/componentes/cinema.html"><b>Cinema</b></a></li>
+                    <li><a href="/componentes/educacao.html"><b>Educação</b></a></li>
+                    <li><a href="/componentes/esportes.html"><b>Esportes</b></a></li>
+                    <li><a href="/componentes/governo.html"><b>Governo</b></a></li>
+                    <li><a href="/componentes/politica.html"><b>Política</b></a></li>
+                    <li><a href="/componentes/saude.html"><b>Saúde</b></a></li>
+                    <li><a href="/componentes/tecnologia.html"><b>Tecnologia</b></a></li>
                 </ul>
             </nav>
         </aside>
-    <main class="main-conteudo">
-        <article class="noticia-destaque">
-            <div class="foto-placehollder">Foto</div>
-            <p>Breve Descrição da notícia</p>
-        </article>
-        <article class="noticia-destaque">
-            <div class="foto-placehollder">Foto</div>
-            <p>Breve Descrição da notícia</p>
-        </article>
-        <article class="noticia-destaque">
-            <div class="foto-placehollder">Foto</div>
-            <p>Breve Descrição da notícia</p>
-        </article>
-        <article class="noticia-destaque">
-            <div class="foto-placehollder">Foto</div>
-            <p>Breve Descrição da notícia</p>
-        </article>
-    </main>   
+    <main class="main-conteudo"></main>   
     <footer class="rodape">
         <p>J.R. © Copyright 2025</p>
         <a href="#">Reclamação</a>
