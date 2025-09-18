@@ -1,0 +1,107 @@
+.italiana-regular {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Italiana", serif;
+}
+.title {
+  font-size: 35px;
+}
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #59a1e4;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333
+}
+
+.header .datetime {
+  font-size: 18px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.header .login-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  width: 350px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: white;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box label {
+  font-size: 14px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}

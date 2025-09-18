@@ -53,13 +53,23 @@ body {
 }
 .header-title h1 {
   font-size: 48px;
-  font-weight: 500;
   color: var(--text-dark);
   margin: 0;
 }
 .header-title a {
   text-decoration: none;
   color: var(--text-dark);
+}
+.header-usuario{
+  width: 50px;
+  height: 50px;
+  background-color: #b4b4b4;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .header-usuario .material-icons {
   font-size: 50px;
@@ -71,7 +81,8 @@ body {
   text-align: right;
 }
 #datahora {
-  color: var(--text-dark);
+  color: #000000;
+  font-size: 20px;
 }
 .barra-busca {
   grid-column: 1 / -1;
@@ -92,7 +103,7 @@ body {
 }
 .barra-busca .search-icon {
   position: absolute;
-  right: 310px;
+  right: 305px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
