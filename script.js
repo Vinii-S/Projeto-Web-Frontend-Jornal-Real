@@ -1,4 +1,3 @@
-
 function atualizarRelogio() {
   // 1. Pega a data e hora atual do computador
   const agora = new Date();

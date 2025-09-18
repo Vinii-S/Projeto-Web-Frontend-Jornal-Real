@@ -37,7 +37,13 @@ body {
   box-sizing: border-box;
   position: relative;
 }
-
+.header-info {
+  text-align: right;
+}
+#datahora {
+  color: #000000;
+  font-size: 20px;
+}
 .header a {
   text-decoration: none;
   font-size: 30px;
