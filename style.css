@@ -50,6 +50,7 @@ body {
 .header-title {
   position: absolute;
   left: 50%;
+  transform: translateX(-17%);
 }
 .header-title h1 {
   font-size: 48px;

@@ -39,59 +39,73 @@ function loadContent(url, pushHistory = true) {
     .then((html) => {
       document.querySelector(".main-conteudo").innerHTML = html;
       if (pushHistory) {
-        window.history.pushState({ path: url }, "", url);
+        window.history.pushState({ path: fetchUrl }, "", url);
       }
     })
     .catch((err) => {
       console.error("Erro ao carregar:", err);
-      document.querySelector(".main-conteudo").innerHTML =
-        "<h1>Erro 404: Página não encontrada.</h1>";
+      if (document.querySelector(".main-conteudo")) {
+        document.querySelector(".main-conteudo").innerHTML =
+          "<h1>Erro 404: Página não encontrada.</h1>";
+      }
     });
 }
-
-
-
-// Animação do menu
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  document.querySelector(".menu-lateral").classList.toggle("shrink");
-});
-
-//Carrega o conteúdo inicial
-loadContent(window.location.pathname, false);
-
-//Listener para TODOS os links <a>
-document.addEventListener("click", function (e) {
-  // Pega o <a> mais próximo do clique
-  const link = e.target.closest("a");
-
-  // Se não for um link, ou for um link externo (...) deixa o navegador agir
-  if (
-    !link ||
-    link.target === "_blank" ||
-    !link.href.startsWith(window.location.origin)
-  ) {
-    return;
-  }
-
-  // Pega a URL
-  const url = link.getAttribute("href");
-
-  // Se o link for para a página de login (...) deixa o navegador redirecionar.
-  if (url.includes("login.html") || url.includes("cadastro.html")) {
-    return;
-  }
-
-  e.preventDefault();
-  loadContent(url, true); // true para adicionar ao histórico
-});
-
 //RODA O RELÓGIO 
 atualizarRelogio();
 setInterval(atualizarRelogio, 1000);
 
-//ADICIONA O LISTENER DO "VOLTAR" 
-window.addEventListener("popstate", (e) => {
-  // Carrega o conteúdo da URL atual (que o navegador acabou de mudar)
-  // O 'false' é para não criar uma nova entrada no histórico
-  loadContent(location.pathname, false);
-});
+// Procura os elementos principais do SPA
+const mainContentArea = document.querySelector(".main-conteudo");
+const menuToggleButton = document.getElementById("menu-toggle");
+
+// Animação do menu
+if (mainContentArea && menuToggleButton) {
+  
+  // Animação do menu
+  menuToggleButton.addEventListener("click", function () {
+    document.querySelector(".menu-lateral").classList.toggle("shrink");
+  });
+
+  // Carrega o conteúdo inicial (home)
+  loadContent(window.location.pathname, false);
+  // Garante que o estado inicial (home) esteja no histórico
+  window.history.replaceState({ path: "/componentes/home.html" }, "", window.location.pathname);
+
+
+  // Listener para TODOS os links <a>
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest("a");
+
+    // Se não for um link, ou for externo, deixa o navegador agir
+    if (
+      !link ||
+      link.target === "_blank" ||
+      !link.href.startsWith(window.location.origin)
+    ) {
+      return;
+    }
+
+    const url = link.getAttribute("href");
+
+    // Se for link de login/cadastro, deixa o navegador agir (recarregar a pág)
+    if (url.includes("login.html") || url.includes("cadastro.html")) {
+      return;
+    }
+
+    // Se for qualquer outro link, previne o recarregamento
+    e.preventDefault();
+    loadContent(url, true); // true para adicionar ao histórico
+  });
+
+  // ADICIONA O LISTENER DO "VOLTAR" (só na página principal)
+  window.addEventListener("popstate", (e) => {
+    // Se o estado (e.state) existir (o usuário clicou em algo)...
+    if (e.state && e.state.path) {
+        // Carrega o componente salvo no 'path' (ex: /componentes/home.html)
+        loadContent(e.state.path, false);
+    } else {
+        // Se for o estado inicial (ex: F5 na página de notícia)
+        loadContent(location.pathname, false);
+    }
+  });
+}
